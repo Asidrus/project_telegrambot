@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  telegram:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - WEBSITE_PORT
+      - WEBSITE_IP
+      - TELEGRAMBOT_PORT
+      - API_TOKEN
+    ports:
+      - "${TELEGRAMBOT_PORT}:443"
